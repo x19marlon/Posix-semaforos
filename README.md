@@ -6,11 +6,14 @@ El proyecto fue desarrollado en C y aborda el clásico problema de **Productor-C
 
 ## Contenido del Repositorio
 
-- `posixSincro.c`: Implementación del problema productor-consumidor utilizando múltiples hilos (pthreads), exclusión mutua (mutex) y variables de condición en un único proceso. Contiene hilos productores y un hilo "spooler" (consumidor) interactuando en un búfer circular.
-- `producer.c`: Implementación de un proceso Productor independiente que crea y escribe en un segmento de memoria compartida POSIX (`shm_open`, `mmap`). Utiliza semáforos nombrados POSIX (`sem_open`) para la sincronización con el proceso consumidor.
-- `consumer.c`: Implementación de un proceso Consumidor independiente que se conecta al segmento de memoria compartida y lee los datos, sincronizando su ejecución con el productor a través de los semáforos compartidos.
-- `consumer.h`: Archivo de cabecera que define las constantes, estructuras de memoria compartida y nombres de los semáforos utilizados tanto por `producer.c` como por `consumer.c`.
-- `Makefile`: Archivo de automatización para compilar todos los ejecutables del proyecto.
+La estructura del proyecto está organizada de la siguiente manera:
+
+- `src/`: Carpeta que contiene todo el código fuente en C.
+  - `posixSincro.c`: Implementación del problema productor-consumidor utilizando múltiples hilos (pthreads), exclusión mutua (mutex) y variables de condición en un único proceso.
+  - `producer.c`: Implementación de un proceso Productor independiente que crea y escribe en un segmento de memoria compartida POSIX.
+  - `consumer.c`: Implementación de un proceso Consumidor independiente que se conecta al segmento de memoria compartida y lee los datos.
+  - `consumer.h`: Archivo de cabecera con constantes y estructuras de memoria compartida para productor y consumidor.
+- `Makefile`: Archivo de automatización para compilar todos los ejecutables del proyecto desde la raíz.
 - `taller_3 .pdf`: Documento con las instrucciones originales del laboratorio.
 
 ## Requisitos

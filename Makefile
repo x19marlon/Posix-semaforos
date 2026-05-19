@@ -20,15 +20,15 @@ TARGETS = posixSincro producer consumer
 all: $(TARGETS)
 
 # Regla de compilación para el ejercicio de sincronización POSIX con hilos
-posixSincro: posixSincro.c
+posixSincro: src/posixSincro.c
 	$(CC) $(CFLAGS) $< -o $@
 
 # Regla de compilación para el productor del búfer compartido
-producer: producer.c consumer.h
+producer: src/producer.c src/consumer.h
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
 # Regla de compilación para el consumidor del búfer compartido
-consumer: consumer.c consumer.h
+consumer: src/consumer.c src/consumer.h
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
 # Regla de limpieza para borrar los binarios generados
