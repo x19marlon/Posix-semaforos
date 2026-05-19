@@ -14,7 +14,7 @@ CFLAGS = -Wall -Wextra -pthread
 LDFLAGS = -pthread -lrt
 
 # Nombre de los ejecutables objetivo
-TARGETS = posixSincro producer consumer
+TARGETS = posixSincro producer consumer concurrenciaPosix
 
 # Regla por defecto para compilar todos los ejecutables
 all: $(TARGETS)
@@ -30,6 +30,10 @@ producer: src/producer.c src/consumer.h
 # Regla de compilación para el consumidor del búfer compartido
 consumer: src/consumer.c src/consumer.h
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
+
+# Regla de compilación para el buscador de máximos con hilos
+concurrenciaPosix: src/concurrenciaPosix.c
+	$(CC) $(CFLAGS) $< -o $@
 
 # Regla de limpieza para borrar los binarios generados
 clean:

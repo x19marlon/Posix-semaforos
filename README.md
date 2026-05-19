@@ -13,6 +13,8 @@ La estructura del proyecto está organizada de la siguiente manera:
   - `producer.c`: Implementación de un proceso Productor independiente que crea y escribe en un segmento de memoria compartida POSIX.
   - `consumer.c`: Implementación de un proceso Consumidor independiente que se conecta al segmento de memoria compartida y lee los datos.
   - `consumer.h`: Archivo de cabecera con constantes y estructuras de memoria compartida para productor y consumidor.
+  - `concurrenciaPosix.c`: Implementación de un programa que busca el valor máximo en un arreglo de enteros, distribuyendo la carga entre múltiples hilos POSIX concurrentes.
+- `pruebas/`: Carpeta con archivos de prueba masivos para el programa `concurrenciaPosix` y un script automatizado `run_tests.sh`.
 - `Makefile`: Archivo de automatización para compilar todos los ejecutables del proyecto desde la raíz.
 - `taller_3 .pdf`: Documento con las instrucciones originales del laboratorio.
 
@@ -34,6 +36,7 @@ Esto generará los siguientes ejecutables:
 - `posixSincro`
 - `producer`
 - `consumer`
+- `concurrenciaPosix`
 
 Para limpiar los ejecutables generados, puedes ejecutar:
 
@@ -61,6 +64,20 @@ Primero inicia el productor (quien crea la memoria compartida y semáforos):
 Y luego ejecuta el consumidor:
 ```bash
 ./consumer
+```
+
+### 3. Búsqueda de Máximo (Hilos Concurrentes)
+Para ejecutar el buscador de máximo en un arreglo, usa el siguiente formato (donde `N` es la cantidad de hilos):
+
+```bash
+./concurrenciaPosix <archivo_de_datos> <N>
+```
+
+**Ejecución automatizada de pruebas:**
+En la carpeta `pruebas/` existen archivos de gran tamaño listos para ser evaluados. Puedes ejecutar todas las pruebas automáticamente usando el script proporcionado:
+
+```bash
+./pruebas/run_tests.sh
 ```
 
 ## Autor
