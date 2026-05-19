@@ -61,4 +61,4 @@ Y luego ejecuta el consumidor:
 ```
 
 ## Autor
-- **Marlon Garcia** - *Pontificia Universidad Javeriana* - 05 de Mayo del 2026
+- **Marlon Garcia** - *Pontificia Universidad Javeriana* - 19 de Mayo del 2026
